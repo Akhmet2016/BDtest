@@ -1,0 +1,22 @@
+.table{
+    text-align: center;
+    min-width: 100%;
+}
+th.number{
+    width: 3%;
+}
+th.marka{
+    width: 10%;
+}
+th.data{
+    width: 5%;
+}
+th.colour{
+    width: 7%;
+}
+th.delete{
+    width: 1%;
+}
+#id{
+    display: none;
+}
