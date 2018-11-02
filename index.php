@@ -33,13 +33,13 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="root">
                     <?php
                         $count = 0;
                         foreach ($car as $key => $value) {
                             $count++;
                             ?>
-                                <tr>
+                                <tr class="cars">
                                     <th class="number"><?= $count ?></th>
                                     <td class="marka"><?= $value['name'] ?></td>
                                     <td class="data"><?= $value['date'] ?></td>
@@ -84,8 +84,12 @@
                 data:   	{'id':idRow},
                 dataType:	'json',
                 success: function(data) {
-                    console.dir(data);
-                    document.write("<?php $counter='"+data+"' ?>");
+                    if (data != false) {
+                        $('.cars').remove();
+                        $('#root').html(data);
+                    } else {
+                        alert('Ошибка!');
+                    }
                 }
             });
         });
